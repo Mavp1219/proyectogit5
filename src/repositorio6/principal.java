@@ -27,21 +27,108 @@ public class principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtvalor1 = new javax.swing.JTextField();
+        txtvalor2 = new javax.swing.JTextField();
+        txtvalor3 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtresultado = new javax.swing.JTextField();
+        cmdcalcular = new javax.swing.JButton();
+        cmdborrar = new javax.swing.JButton();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setText("MONTO A PAGAR POR UN CLASIFICADO ");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 210, 30));
+
+        jLabel2.setText("NUMERO DE PALABRAS DEL CLASIFICADO: ");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 230, 30));
+
+        jLabel3.setText("NUMERO DE CENTIMETROS DEL CALSIFICADO :");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 250, 30));
+
+        jLabel4.setText("NUMERO DE COLORES DEL CLASIFICADO: ");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 230, 30));
+
+        txtvalor1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtvalor1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtvalor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, 180, 30));
+        jPanel1.add(txtvalor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 180, 30));
+        jPanel1.add(txtvalor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 180, 30));
+
+        jLabel5.setText("MONTO A PAGAR POR SU AVISO:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 190, 40));
+
+        txtresultado.setEditable(false);
+        jPanel1.add(txtresultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 210, 30));
+
+        cmdcalcular.setText("CALCULAR");
+        cmdcalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdcalcularActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdcalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, -1));
+
+        cmdborrar.setText("BORRAR");
+        cmdborrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdborrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdborrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtvalor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtvalor1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtvalor1ActionPerformed
+
+    private void cmdcalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdcalcularActionPerformed
+        double v1,v2,v3,vpalabras,vcm,vcolor,vtotal;
+       
+        v1 = Double.parseDouble(txtvalor1.getText());
+        v2 = Double.parseDouble(txtvalor2.getText());
+        v3 = Double.parseDouble(txtvalor3.getText());
+        
+        vpalabras = v1 * 20000;
+        
+        vcm = v2 * 15000;
+        
+        vcolor = v3 * 25000;
+        
+        vtotal = vpalabras + vcm + vcolor; 
+        
+        txtresultado.setText(String.valueOf(vtotal));
+        
+                
+        
+        
+        
+    }//GEN-LAST:event_cmdcalcularActionPerformed
+
+    private void cmdborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdborrarActionPerformed
+        txtvalor1.setText("");
+        txtvalor2.setText("");
+        txtvalor3.setText("");
+        txtresultado.setText("");
+        
+        txtvalor1.requestFocusInWindow();
+        
+    }//GEN-LAST:event_cmdborrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +166,17 @@ public class principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmdborrar;
+    private javax.swing.JButton cmdcalcular;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtresultado;
+    private javax.swing.JTextField txtvalor1;
+    private javax.swing.JTextField txtvalor2;
+    private javax.swing.JTextField txtvalor3;
     // End of variables declaration//GEN-END:variables
 }
