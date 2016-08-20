@@ -5,6 +5,8 @@
  */
 package repositorio6;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
@@ -66,8 +68,25 @@ public class principal extends javax.swing.JFrame {
                 txtvalor1ActionPerformed(evt);
             }
         });
+        txtvalor1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtvalor1KeyTyped(evt);
+            }
+        });
         jPanel1.add(txtvalor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, 180, 30));
+
+        txtvalor2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtvalor2KeyTyped(evt);
+            }
+        });
         jPanel1.add(txtvalor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 180, 30));
+
+        txtvalor3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtvalor3KeyTyped(evt);
+            }
+        });
         jPanel1.add(txtvalor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 180, 30));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -103,26 +122,52 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_txtvalor1ActionPerformed
 
     private void cmdcalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdcalcularActionPerformed
-        double v1,v2,v3,vpalabras,vcm,vcolor,vtotal;
-       
-        v1 = Double.parseDouble(txtvalor1.getText());
-        v2 = Double.parseDouble(txtvalor2.getText());
-        v3 = Double.parseDouble(txtvalor3.getText());
-        
-        vpalabras = v1 * 20000;
-        
-        vcm = v2 * 15000;
-        
-        vcolor = v3 * 25000;
-        
-        vtotal = vpalabras + vcm + vcolor; 
-        
-        txtresultado.setText(String.valueOf(vtotal));
-        
-                
-        
-        
-        
+        double v1, v2, v3, vpalabras, vcm, vcolor, vtotal;
+
+        if (txtvalor1.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ingrese el numero de palabras", "Error", JOptionPane.ERROR_MESSAGE);
+            txtvalor1.requestFocusInWindow();
+            txtvalor1.selectAll();
+        } else if (txtvalor2.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ingrese el numero de CM", "Error", JOptionPane.ERROR_MESSAGE);
+            txtvalor2.requestFocusInWindow();
+            txtvalor2.selectAll();
+        } else if (txtvalor3.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ingrese el numero de colores", "Error", JOptionPane.ERROR_MESSAGE);
+            txtvalor3.requestFocusInWindow();
+            txtvalor3.selectAll();
+        } else {
+            v1 = Double.parseDouble(txtvalor1.getText());
+            v2 = Double.parseDouble(txtvalor2.getText());
+            v3 = Double.parseDouble(txtvalor3.getText());
+
+            if (v1 == 0) {
+                JOptionPane.showMessageDialog(this, "Ingrese el numero de palabras diferente de 0", "Error", JOptionPane.ERROR_MESSAGE);
+                txtvalor1.requestFocusInWindow();
+                txtvalor1.selectAll();
+            } else if (v2 == 0) {
+                JOptionPane.showMessageDialog(this, "Ingrese el nummero de CM diferente de 0", "Error", JOptionPane.ERROR_MESSAGE);
+                txtvalor2.requestFocusInWindow();
+                txtvalor2.selectAll();
+            } else if (v3 == 0) {
+                JOptionPane.showMessageDialog(this, "Ingrese un numero de colores diferente de 0", "Error", JOptionPane.ERROR_MESSAGE);
+                txtvalor3.requestFocusInWindow();
+                txtvalor3.selectAll();
+            } else {
+
+                vpalabras = v1 * 20000;
+
+                vcm = v2 * 15000;
+
+                vcolor = v3 * 25000;
+
+                vtotal = vpalabras + vcm + vcolor;
+
+                txtresultado.setText(String.valueOf(vtotal));
+
+            }
+        }
+
     }//GEN-LAST:event_cmdcalcularActionPerformed
 
     private void cmdborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdborrarActionPerformed
@@ -130,10 +175,34 @@ public class principal extends javax.swing.JFrame {
         txtvalor2.setText("");
         txtvalor3.setText("");
         txtresultado.setText("");
-        
+
         txtvalor1.requestFocusInWindow();
-        
+
     }//GEN-LAST:event_cmdborrarActionPerformed
+
+    private void txtvalor1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtvalor1KeyTyped
+     char c=evt.getKeyChar();
+     if(!Character.isDigit(c)){
+         getToolkit().beep();
+         evt.consume();
+     }
+    }//GEN-LAST:event_txtvalor1KeyTyped
+
+    private void txtvalor2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtvalor2KeyTyped
+        char c=evt.getKeyChar();
+     if(!Character.isDigit(c)){
+         getToolkit().beep();
+         evt.consume();
+     }
+    }//GEN-LAST:event_txtvalor2KeyTyped
+
+    private void txtvalor3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtvalor3KeyTyped
+        char c=evt.getKeyChar();
+     if(!Character.isDigit(c)){
+         getToolkit().beep();
+         evt.consume();
+     }
+    }//GEN-LAST:event_txtvalor3KeyTyped
 
     /**
      * @param args the command line arguments
