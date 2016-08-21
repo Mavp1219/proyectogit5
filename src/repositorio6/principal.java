@@ -141,19 +141,9 @@ public class principal extends javax.swing.JFrame {
             v2 = Double.parseDouble(txtvalor2.getText());
             v3 = Double.parseDouble(txtvalor3.getText());
 
-            if (v1 == 0) {
-                JOptionPane.showMessageDialog(this, "Ingrese el numero de palabras diferente de 0", "Error", JOptionPane.ERROR_MESSAGE);
-                txtvalor1.requestFocusInWindow();
-                txtvalor1.selectAll();
-            } else if (v2 == 0) {
-                JOptionPane.showMessageDialog(this, "Ingrese el nummero de CM diferente de 0", "Error", JOptionPane.ERROR_MESSAGE);
-                txtvalor2.requestFocusInWindow();
-                txtvalor2.selectAll();
-            } else if (v3 == 0) {
-                JOptionPane.showMessageDialog(this, "Ingrese un numero de colores diferente de 0", "Error", JOptionPane.ERROR_MESSAGE);
-                txtvalor3.requestFocusInWindow();
-                txtvalor3.selectAll();
-            } else {
+            
+            
+            { 
 
                 vpalabras = v1 * 20000;
 
@@ -181,27 +171,27 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_cmdborrarActionPerformed
 
     private void txtvalor1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtvalor1KeyTyped
-     char c=evt.getKeyChar();
-     if(!Character.isDigit(c)){
-         getToolkit().beep();
-         evt.consume();
-     }
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
     }//GEN-LAST:event_txtvalor1KeyTyped
 
     private void txtvalor2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtvalor2KeyTyped
-        char c=evt.getKeyChar();
-     if(!Character.isDigit(c)){
-         getToolkit().beep();
-         evt.consume();
-     }
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
     }//GEN-LAST:event_txtvalor2KeyTyped
 
     private void txtvalor3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtvalor3KeyTyped
-        char c=evt.getKeyChar();
-     if(!Character.isDigit(c)){
-         getToolkit().beep();
-         evt.consume();
-     }
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
     }//GEN-LAST:event_txtvalor3KeyTyped
 
     /**
